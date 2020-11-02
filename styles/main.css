@@ -1,0 +1,95 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  background-color: orange;
+}
+.width-wrap {
+  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: none;
+  padding: 0 2em 2em;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3em;
+  background-color: black;
+  color: brown;
+}
+
+h1,
+h2,
+h3 {
+  color: cyan;
+}
+a {
+  color: crimson;
+}
+header a {
+  color: green;
+  padding: 1em 0.5em 1em;
+}
+::selection {
+  background-color: aqua;
+}
+header {
+  border-top: 4px solid rgb(0, 0, 0);
+  border-top: 4px solid rgba(0, 0, 0, 0.1);
+  margin-left: -2em;
+  margin-right: -2em;
+}
+header nav {
+  border-bottom: 1px dotted rgba(0, 255, 0, 0.3);
+  margin: 0em 2em;
+}
+
+ul li {
+  display: inline;
+}
+
+header nav ul {
+  margin: 0;
+  padding: 0;
+  padding-top: 1em;
+}
+header a:hover {
+  border-top: 4px solid yellow;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+td {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.3em 1em;
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.3em 1em;
+}
+form input,
+select,
+#life {
+  display: block;
+}
+
+button {
+  border: 0;
+  padding: 1em 3em;
+  background-color: purple;
+  color: black;
+}
+input:invalid {
+  background: red;
+}
+
+dt::after {
+  content: ":";
+}
