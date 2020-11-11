@@ -31,31 +31,31 @@
         <h1>Survey</h1>
         <form action="https://formspree.io/f/xzbkedjg" method="post">
           <p>
-            <label for="name">What is your name?</label>
+            <label for="name">What is your name? <abbr title="required" aria-label="required">*</abbr></abbr></label>
             <input
               type="text"
               id="name"
               name="name_field"
-              aria-required="true"
+              required
             />
           </p>
           <p>
-            <label for="email"> What is your Email? </label>
-            <input type="email" id="email" email="email_field" required />
+            <label for="email">What is your email? <abbr title="required" aria-label="required">*</abbr></label>
+            <input type="email" id="email" name="email_field" required />
           </p>
           <p>
             <label for="number">which whole number is the best? </label>
-            <input type="date" id="number" number="number_field" />
+            <input type="number" id="number" name="best_whole_number" min="1"/>
           </p>
           <p>
             <label for="day"> Which day is best? </label>
-            <input type="text" id="day" name="best_day" />
+            <input type="date" id="day" name="best_day" />
           </p>
           <p>
-            <label for="Bear"
-              >which bear is best?<abbr title="required">*</abbr></label
+            <label for="bear"
+              >which bear is best?<abbr title="required" aria-label="required">*</abbr></label
             >
-            <select id="bear" name="best_bear">
+            <select id="bear" name="best_bear" required>
               <option></option>
               <option value="black">black</option>
               <option value="brown">Brown</option>
@@ -107,19 +107,21 @@
               <p></p>
             </ul>
           </fieldset>
-          <label for="what is the meaning of life">
-            what is the meaning of life:</label
-          ><br />
-          <textarea
-            id="life"
-            name="life_meaning"
-            placeholder="Enter the correct answer here"
-            cols="50"
-            rows="5"
-          >
-          </textarea>
           <p>
-            <input type="submit" value="submit" />
+            <label for="life_meaning">
+              what is the meaning of life:</label
+            >
+            <textarea
+              id="life"
+              name="life_meaning"
+              placeholder="Enter the correct answer here"
+              cols="50"
+              rows="5"
+            >
+            </textarea>
+          </p>
+          <p>
+            <button type="submit">Submit</button>
           </p>
         </form>
       </main>
