@@ -14,7 +14,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-top: none;
   padding: 0 2em 2em;
-  width: 960px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3em;
@@ -48,39 +48,49 @@ header nav {
   margin: 0em 2em;
 }
 
-ul li {
+header nav ul li {
   display: inline;
 }
 
 header nav ul {
   margin: 0;
   padding: 0;
-  padding-top: 1em;
+}
+header nav a {
+  display: inline-block;
+  padding: 1em 0 0.5em;
+  margin: -4px 1em 0;
+  border-top: 4px solid rgba(0,0,0,0);
 }
 header a:hover {
   border-top: 4px solid yellow;
 }
 
-tr:nth-child(even) {
+
+td {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.3em 1em;
+}
+tr:nth-child(even) td {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-td {
-  background-color: rgba(0, 0, 0, 0.05);
+
+th,
+tfoot td {
+  background-color: rgba(255, 255, 255, 0.2);
   padding: 0.3em 1em;
 }
 
-th {
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 0.3em 1em;
-}
-form input,
-select,
-#life {
+label {
   display: block;
 }
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    display: inline;
+}
 
-button {
+[type="submit"] {
   border: 0;
   padding: 1em 3em;
   background-color: purple;
@@ -92,4 +102,17 @@ input:invalid {
 
 dt::after {
   content: ":";
+}
+
+
+footer hr {
+  width: 50vw;
+  min-width: 300px;
+  max-width: 890px;
+
+  margin-top: 3em;
+  margin-bottom: 2em;
+
+  border: none;
+  border-bottom: 3px dotted #fff;
 }
