@@ -7,6 +7,8 @@ html {
   box-sizing: inherit;
 }
 body {
+  line-height: 1.3em;
+  font-family: "Open Sans", sans-serif;
   background-color: orange;
 }
 .width-wrap {
@@ -19,21 +21,47 @@ body {
   margin-right: auto;
   margin-bottom: 3em;
   background-color: black;
-  color: brown;
+  color: red;
 }
 
-h1,
+h1 {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(255, 0, 202, 1) 0%,
+    rgba(0, 212, 255, 1) 0%
+  );
+}
 h2,
 h3 {
+  font-family: "Roboto Mono", monospace;
   color: cyan;
 }
 a {
+  text-decoration: none;
   color: crimson;
+}
+a:hover {
+  text-decoration: underline;
 }
 header a {
   color: green;
   padding: 1em 0.5em 1em;
 }
+header a {
+  font-weight: bold;
+}
+header a {
+  letter-spacing: 4px;
+}
+header a {
+  text-transform: uppercase;
+}
+header a:hover {
+  text-decoration: none;
+}
+
 ::selection {
   background-color: aqua;
 }
@@ -47,16 +75,22 @@ header nav {
   border-bottom: 1px dotted rgba(0, 255, 0, 0.3);
   margin: 0em 2em;
 }
-
+ol li {
+  list-style-type: upper-roman;
+}
 ul li {
   display: inline;
 }
 
 header nav ul {
   margin: 0;
-  padding: 0;
   padding-top: 1em;
+  background-image: url(link.png);
+  background-repeat: no-repeat;
+  background-size:10px 10px;
+  background-position:left center ;
 }
+
 header a:hover {
   border-top: 4px solid yellow;
 }
@@ -74,6 +108,9 @@ th {
   background-color: rgba(0, 0, 0, 0.2);
   padding: 0.3em 1em;
 }
+iframe {
+  border-radius: 2em 0em;
+}
 form input,
 select,
 #life {
@@ -82,7 +119,6 @@ select,
 
 button {
   border: 0;
-  padding: 1em 3em;
   background-color: purple;
   color: black;
 }
@@ -92,4 +128,19 @@ input:invalid {
 
 dt::after {
   content: ":";
+}
+.bio {
+column-count: 3;
+column-gap: 2em;  
+}
+.bio img{
+padding: 2%;
+box-shadow: 10px 5px 5px #116530
+}
+.bio table{
+column-span: all;
+margin-top: 1em;
+border-collapse: collapse;
+caption-side: bottom;
+  
 }
