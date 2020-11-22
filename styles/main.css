@@ -97,15 +97,11 @@ header nav ul li {
 
 header nav ul {
   margin: 0;
-<<<<<<< HEAD
   padding-top: 1em;
   background-image: url(link.png);
   background-repeat: no-repeat;
   background-size: 10px 10px;
   background-position: left center;
-=======
-  padding: 0;
->>>>>>> 173d073bc85893b00a9c79a20581427175f4fcbf
 }
 
 footer {
@@ -164,20 +160,6 @@ dt::after {
   content: ":";
 }
 .bio {
-<<<<<<< HEAD
-  column-count: 3;
-  column-gap: 2em;
-}
-.bio img {
-  padding: 2%;
-  box-shadow: 10px 5px 5px #116530;
-}
-.bio table {
-  column-span: all;
-  margin-top: 1em;
-  border-collapse: collapse;
-  caption-side: bottom;
-=======
 column-count: 3;
 column-gap: 2em;  
 }
@@ -192,5 +174,4 @@ margin-top: 1em;
 border-collapse: collapse;
 caption-side: bottom;
   
->>>>>>> 173d073bc85893b00a9c79a20581427175f4fcbf
 }
