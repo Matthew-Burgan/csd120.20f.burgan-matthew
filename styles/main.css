@@ -101,10 +101,31 @@ header nav ul {
   justify-content: center;
 
   margin: 0;
+  padding: 0;
   background-image: url(link.png);
   background-repeat: no-repeat;
   background-size: 10px 10px;
   background-position: left center;
+}
+@media screen and ( max-width: 450px ) {
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 200ms;
+  }
+  header nav #menu-toggle:checked + .sandwich-icon + ul {
+    height: 120px;
+  }
+  header nav ul a {
+    padding-top: 0.5em;
+    border-top: none;
+  }
+  header nav ul a:hover {
+    text-decoration: underline;
+    border-top: none;
+  }
 }
 
 footer {
@@ -162,7 +183,7 @@ dt::after {
   content: ":";
 }
 .bio {
-  column-count: 3;
+  column-width: 13em;
   column-gap: 2em;
 }
 .bio img {
@@ -206,7 +227,7 @@ dt::after {
 }
 .gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   grid-gap: 10px;
 }
 .row-span-2 {
@@ -214,6 +235,9 @@ dt::after {
 }
 .gallery .col-span-2 {
   grid-column: span 2;
+}
+.gallery a {
+  transition: transform 200ms;
 }
 .gallery a:hover {
   transform: scale(1.1, 1.1);
@@ -227,7 +251,7 @@ dt::after {
 }
 div.bio a {
   position: relative;
-  display: block;
+  display: inline-block;
 }
 
 div.bio img.paperclip {
@@ -244,7 +268,7 @@ a[href="#top"] {
   margin-left: -25px;
   display: inline-block;
   bottom: 10px;
-  transform: transform 200ms;
+  transition: transform 200ms;
 }
 a[href="#top"]:hover {
   transform: rotate(45deg);
@@ -258,9 +282,9 @@ transition: transform 200ms;
 }  
 }
 @media screen and (max-width: 520px) {
-.bio table
-tfoot,
-th {
+.bio table tfoot,
+.bio table thead,
+.bio table th {
   display: none;
   
 } 
@@ -271,8 +295,11 @@ th {
 .bio table  {
 caption-side: top; 
 }
+.bio table tr td:first-of-type{
+  padding-top: 0.3em;
+}
 .bio table tr td:last-of-type{
-padding: bottom 0.3em;;
+padding-bottom: 0.3em;
 font-style: italic;
 font-size: 0.8;
 }
@@ -289,49 +316,52 @@ flex-direction: column ;
 order: 0;
 color: blue;  
 }
-@media screen and(max-width: 725px) {
-#topul {
-  flex-direction: column;
-  align-items: center;
-  padding: 0.5em;
-  border-top: none;
-  text-decoration: underline;
-} 
-  
 }
-.sandwhich-icon {
+  
+.sandwich-icon,
+#menu-toggle {
+  display: none;
+}
+
+@media screen and ( max-width: 500px ) {
+.sandwich-icon {
 display: block;
 width: 40px;
 height: 25px;
-border-top: 5px;
+border-top: 5px solid #116530;
 margin: 1em auto;
 transition: 200ms;
 }
-.sandwhich-icon:hover {
+.sandwich-icon:hover {
 cursor: pointer;
 }
-.sandwhich-icon::after
-.sandwhich-icon::before {
+.sandwich-icon::after,
+.sandwich-icon::before {
+content: " ";
 display: block;
 width: 40px;
 border-top: 5px solid #116530;
 position: absolute;
 transition: transform 200ms;
 }
-.sandwhich-icon label {
+.sandwich-icon {
 position: relative;
 }
-.sandwhich-icon::after {
-top: 30px;
+.sandwich-icon::after {
+top: 5px;
 
 }
-.sandwhich-icon::before{
- bottom: 10px; 
-
-}
+.sandwich-icon::before{
+ top: 15px; 
 }
 
 
+#menu-toggle:checked + .sandwich-icon {
+  transform: rotate(45deg);
+  border-top-color: transparent;
+}
+#menu-toggle:checked + .sandwich-icon::after {
+  transform: rotate(-90deg) translateX(-10px);
+}
 
-
-
+}
